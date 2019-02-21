@@ -27,17 +27,18 @@ public class AddData extends AppCompatActivity {
         email = findViewById(R.id.email);
         mobile = findViewById(R.id.phoneno);
         address = findViewById(R.id.Address);
-        fatherName= findViewById(R.id.FatherName);
+        fatherName = findViewById(R.id.FatherName);
 
-         //realm object created
-        realm =  Realm.getDefaultInstance();
+        //realm object created
+        realm = Realm.getDefaultInstance();
 
         findViewById(R.id.addbtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                realm.beginTransaction();
                 //open the database
+                realm.beginTransaction();
+
 
                 //inserted all data to database
                 Employee obj = realm.createObject(Employee.class);
@@ -47,8 +48,9 @@ public class AddData extends AppCompatActivity {
                 obj.setMobile(mobile.getText().toString().trim());
                 obj.setAddress(address.getText().toString().trim());
                 obj.setFatherName(fatherName.getText().toString().trim());
-                realm.commitTransaction();
                 //close the database
+                realm.commitTransaction();
+
                 finish();
 
             }

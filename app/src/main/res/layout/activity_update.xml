@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/name1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter your name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/age2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter your age"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/email3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/phoneno4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter your mobile no."
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/Address5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Address."
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/FatherName6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="father name."
+        android:inputType="text" />
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:id="@+id/updatebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Information" />
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:id="@+id/debtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Information" />
+
+</LinearLayout>

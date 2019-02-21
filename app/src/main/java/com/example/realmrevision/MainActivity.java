@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnAdd,btnShow;
+    Button btnAdd, btnShow;
 
 
     @Override
@@ -20,14 +20,15 @@ public class MainActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,AddData.class);
+                Intent i = new Intent(MainActivity.this, AddData.class);
                 startActivity(i);
             }
         });
+
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,ShowData.class);
+                Intent i = new Intent(MainActivity.this, ShowData.class);
                 startActivity(i);
             }
         });

@@ -1,19 +1,24 @@
 package com.example.realmrevision;
 
+import android.widget.EditText;
+
 import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class Employee extends RealmObject {
 
     String name;
     String age;
+
+
     String email;
     String mobile;
     String address;
     String fatherName;
-
+    /* Realm realm;*/
 
 
     public String getName() {
@@ -63,6 +68,7 @@ public class Employee extends RealmObject {
     public void setFatherName(String fatherName) {
         this.fatherName = fatherName;
     }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -74,6 +80,7 @@ public class Employee extends RealmObject {
                 ", fatherName='" + fatherName + '\'' +
                 '}';
     }
+
     public static List<Employee> getAllStudents() {
         try {
             Realm realm = Realm.getDefaultInstance();
@@ -82,4 +89,7 @@ public class Employee extends RealmObject {
             e.printStackTrace();
             return null;
         }
-    }}
+    }
+
+
+}

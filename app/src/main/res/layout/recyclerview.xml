@@ -11,6 +11,7 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
+            android:id="@+id/cardview1"
             android:layout_margin="30dp"
             android:layout_width="match_parent"
             android:layout_height="150dp">
@@ -22,6 +23,7 @@
 
                 <TextView
                     android:layout_gravity="center"
+                    android:gravity="center"
                     android:hint="Name"
                     android:textColor="@color/colorAccent"
                     android:id="@+id/Name"
@@ -31,6 +33,7 @@
                 <TextView
                     android:textColor="@color/colorAccent"
                     android:layout_marginTop="0dp"
+                    android:gravity="center"
                     android:layout_gravity="center"
                     android:hint="age"
                     android:layout_width="match_parent"
@@ -39,21 +42,27 @@
                 <TextView
                     android:id="@+id/Email"
                     android:hint="email"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
                 <TextView
                     android:id="@+id/Mobileno"
                     android:hint="mobileno"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
                 <TextView
                     android:id="@+id/Address"
                     android:hint="Address"
                     android:layout_width="match_parent"
+                    android:gravity="center"
                     android:layout_height="match_parent" />
                 <TextView
                     android:id="@+id/Fathername"
                     android:hint="fathername"
+                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
