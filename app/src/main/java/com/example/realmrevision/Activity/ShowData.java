@@ -1,6 +1,5 @@
-package com.example.realmrevision;
+package com.example.realmrevision.Activity;
 
-import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.realmrevision.Adapters.StudentAdapter;
+import com.example.realmrevision.Model.Employee;
+import com.example.realmrevision.R;
 
 import java.util.List;
 

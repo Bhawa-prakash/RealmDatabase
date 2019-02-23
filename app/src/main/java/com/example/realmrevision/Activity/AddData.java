@@ -1,9 +1,12 @@
-package com.example.realmrevision;
+package com.example.realmrevision.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.realmrevision.Model.Employee;
+import com.example.realmrevision.R;
 
 import javax.annotation.Nullable;
 
@@ -32,6 +35,7 @@ public class AddData extends AppCompatActivity {
         //realm object created
         realm = Realm.getDefaultInstance();
 
+
         findViewById(R.id.addbtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,16 +44,31 @@ public class AddData extends AppCompatActivity {
                 realm.beginTransaction();
 
 
-                //inserted all data to database
-                Employee obj = realm.createObject(Employee.class);
+//                //inserted all data to database
+//                Employee obj = realm.createObject(Employee.class);
+//                obj.setName(name.getText().toString().trim());
+//                obj.setAge(age.getText().toString().trim());
+//                obj.setEmail(email.getText().toString().trim());
+//                obj.setMobile(mobile.getText().toString().trim());
+//                obj.setAddress(address.getText().toString().trim());
+//                obj.setFatherName(fatherName.getText().toString().trim());
+//                //close the database
+
+
+                //   alternate method
+
+                Employee obj = new Employee();
                 obj.setName(name.getText().toString().trim());
                 obj.setAge(age.getText().toString().trim());
                 obj.setEmail(email.getText().toString().trim());
                 obj.setMobile(mobile.getText().toString().trim());
                 obj.setAddress(address.getText().toString().trim());
                 obj.setFatherName(fatherName.getText().toString().trim());
-                //close the database
+                realm.copyToRealmOrUpdate(obj);
+
                 realm.commitTransaction();
+
+                //close
 
                 finish();
 

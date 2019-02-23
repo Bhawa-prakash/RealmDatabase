@@ -10,9 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.realmrevision.Employee;
+import com.example.realmrevision.Model.Employee;
 import com.example.realmrevision.R;
-import com.example.realmrevision.UpdateActivity;
+import com.example.realmrevision.Activity.UpdateActivity;
 
 import java.util.List;
 
@@ -89,20 +89,11 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
                 context.startActivity(i);
             }
         });
-
-
     }
-
     @Override
     public int getItemCount() {
         if (studentList != null)
             return studentList.size();
-
-
-        return 0;
-
-
+             return 0;
     }
-
-
 }

@@ -1,11 +1,15 @@
-package com.example.realmrevision;
+package com.example.realmrevision.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.View;import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+
+import com.example.realmrevision.Model.Employee;
+import com.example.realmrevision.R;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -22,9 +26,9 @@ public class UpdateActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
+
         deletebtn = findViewById(R.id.debtn);
         updatebtn = findViewById(R.id.updatebtn);
         nam = findViewById(R.id.name1);
@@ -44,6 +48,8 @@ public class UpdateActivity extends AppCompatActivity {
         String fatherr = bundle.getString("FATHER");
 
 
+
+        //Show on text view
         nam.setText(namee);
         ag.setText(agee);
         ema.setText(emaill);
@@ -52,6 +58,40 @@ public class UpdateActivity extends AppCompatActivity {
         father.setText(fatherr);
 
 
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            try {
+                Realm realm = Realm.getDefaultInstance();
+
+
+
+
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+                            RealmResults<Employee> employees = realm.where(Employee.class).equalTo("email", emaill).findAll();
+                            if (employees != null && employees.size() > 0) {
+                                Employee employee = employees.first();
+                                //  employee.setName();
+
+                            }
+                        }
+                    });
+
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+
+            }
+        });
+
+
+
+        //method to delete record
         deletebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,12 +100,21 @@ public class UpdateActivity extends AppCompatActivity {
         });
     }
 
+
+
+
     private void deleteEmployeeRecord() {
+
+        Realm realm=Realm.getDefaultInstance();
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                RealmResults<Employee> employee = realm.where(Employee.class).equalTo("NAME", Employee.getAllStudents().toString().trim()).findAll();
+                String username=nam.getText().toString().trim();
+
+                RealmResults<Employee> employee = realm.where(Employee.class).equalTo("name",username).findAll();
                 employee.deleteAllFromRealm();
+                startActivity(new Intent(UpdateActivity.this,MainActivity.class));
+                Toast.makeText(UpdateActivity.this, "Delete Successfully", Toast.LENGTH_SHORT).show();
             }
         });
     }

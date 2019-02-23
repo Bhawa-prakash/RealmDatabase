@@ -1,6 +1,4 @@
-package com.example.realmrevision;
-
-import android.widget.EditText;
+package com.example.realmrevision.Model;
 
 import java.util.List;
 
@@ -10,11 +8,14 @@ import io.realm.annotations.PrimaryKey;
 
 public class Employee extends RealmObject {
 
+
+    @PrimaryKey
+    String email;
+
     String name;
     String age;
 
 
-    String email;
     String mobile;
     String address;
     String fatherName;
